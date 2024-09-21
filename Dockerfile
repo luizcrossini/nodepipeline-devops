@@ -1,4 +1,4 @@
-FROM node:12
+FROM node:14
 RUN apt-get update -o Acquire::Retries=3 \
     && apt-get install -y git imagemagick \
     && apt-get clean \

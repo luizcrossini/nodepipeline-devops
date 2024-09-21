@@ -13,7 +13,7 @@ phases:
     commands:
       - echo Build started on `date`
       - echo Building the Docker image...
-      - docker build -t auladevopsavancado .
+      - docker build -t nodepipelinedevopsatual .
       - docker tag auladevopsavancado:latest 489323066454.dkr.ecr.us-east-1.amazonaws.com/auladevopsavancado
       
   post_build:

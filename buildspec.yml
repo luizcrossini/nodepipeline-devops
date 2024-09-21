@@ -12,8 +12,7 @@ phases:
   build:
     commands:
       - echo "Building the Docker image"
-      - cd app
-      - docker build -t nodepipeline-devops .
+      - docker build -t nodepipeline-devops ..
       - docker tag nodepipeline-devops:latest 489323066454.dkr.ecr.us-east-1.amazonaws.com/nodepipeline-devops:latest
      
       

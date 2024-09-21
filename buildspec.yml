@@ -13,16 +13,16 @@ phases:
     commands:
       - echo Build started on `date`
       - echo Building the Docker image...
-      - docker build -t auladevopsavancado .
-      - docker tag auladevopsavancado:latest 879381273731.dkr.ecr.us-east-1.amazonaws.com/auladevopsavancado
+      - docker build -t nodepipelinedevopsatual .
+      - docker tag auladevopsavancado:latest 879381273731.dkr.ecr.us-east-1.amazonaws.com/nodepipelinedevopsatual
       
   post_build:
     commands:
       - echo Build completed on `date`
       - echo Pushing the Docker images...
-      - docker push 879381273731.dkr.ecr.us-east-1.amazonaws.com/auladevopsavancado:latest
+      - docker push 879381273731.dkr.ecr.us-east-1.amazonaws.com/nodepipelinedevopsatual:latest
       - echo Writing image definitions file...
-      - printf '[{"name":"nodepipeline-devops","imageUri":"%s"}]' 879381273731.dkr.ecr.us-east-1.amazonaws.com/auladevopsavancado:latest > imagedefinitions.json
+      - printf '[{"name":"nodepipeline-devops","imageUri":"%s"}]' 879381273731.dkr.ecr.us-east-1.amazonaws.com/nodepipelinedevopsatual:latest > imagedefinitions.json
       - cat imagedefinitions.json 
 artifacts:
     files: 

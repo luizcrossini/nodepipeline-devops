@@ -11,8 +11,10 @@ phases:
       - IMAGE_TAG=build-$(echo $CODEBUILD_BUILD_ID | awk -F":" '{print $2}')
   build:
     commands:
+      -echo "Mudando para o diretório do Dockerfile"
+      - cd app  # Caminho para o diretório que contém o Dockerfile
       - echo "Building the Docker image"
-      - docker build -t nodepipeline-devops.
+      - docker build -t nodepipeline-devops .
       - docker tag nodepipeline-devops:latest 489323066454.dkr.ecr.us-east-1.amazonaws.com/nodepipeline-devops:latest
      
       

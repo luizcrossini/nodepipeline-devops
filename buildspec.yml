@@ -14,15 +14,15 @@ phases:
       - echo Build started on `date`
       - echo Building the Docker image...
       - docker build -t nodepipelinedevopsatual .
-      - docker tag nodepipeline-devops:latest 489323066454.dkr.ecr.us-east-1.amazonaws.com/nodepipeline-devops:latest
+      - docker tag nodepipelinedevopsatual 489323066454.dkr.ecr.us-east-1.amazonaws.com/nodepipeline-devops
       
   post_build:
     commands:
       - echo Build completed on `date`
       - echo Pushing the Docker images...
-      - docker push 489323066454.dkr.ecr.us-east-1.amazonaws.com/nodepipeline-devops:latest
+      - docker push 489323066454.dkr.ecr.us-east-1.amazonaws.com/nodepipeline-devops
       - echo Writing image definitions file...
-      - printf '[{"name":"nodepipeline-devops","imageUri":"%s"}]' 489323066454.dkr.ecr.us-east-1.amazonaws.com/nodepipeline-devops:latest > imagedefinitions.json
+      - printf '[{"name":"nodepipeline-devops","imageUri":"%s"}]' 489323066454.dkr.ecr.us-east-1.amazonaws.com/nodepipeline-devops > imagedefinitions.json
       - cat imagedefinitions.json 
 artifacts:
     files: 

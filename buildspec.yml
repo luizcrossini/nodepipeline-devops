@@ -6,7 +6,7 @@ phases:
     commands:
       - echo Logging in to Amazon ECR...
       - aws --version
-      - (Get-ECRLoginCommand).Password | docker login --username AWS --password-stdin 491085398986.dkr.ecr.us-east-2.amazonaws.com
+      - docker login --username AWS --password-stdin 491085398986.dkr.ecr.us-east-2.amazonaws.com
       - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
       - IMAGE_TAG=build-$(echo $CODEBUILD_BUILD_ID | awk -F":" '{print $2}')
   build:
